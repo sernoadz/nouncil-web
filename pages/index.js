@@ -72,7 +72,7 @@ export default function Home() {
       </div>
 
       <div className="w-full relative overflow-hidden bg-white flex items-center flex-col justify-start leading-none">
-          <div className="h-32"><img className="scale-60 lg:scale-100 z-0 rendering-pixelated object-top object-none xl:object-contain w-full h-full" src="/footer.png" alt="Nouncillors" width="2192" height="208" /></div>
+          <div className="h-32"><img className="scale-110 lg:scale-100 z-0 rendering-pixelated object-top object-none xl:object-contain w-full h-full" src="/footer.png" alt="Nouncillors" width="2192" height="208" /></div>
 
           <a target="_blank" rel="noreferrer" className="transition hover:bg-slate-200 text-lg flex items-center mt-12 bg-slate-100 border border-slate-200 rounded-xl px-5 py-3" href="https://etherscan.io/enslookup-search?search=nouncil.eth">
           <svg className="w-5 h-5 mr-1.5 fill-slate-600" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ethereum</title><path d="M11.944 17.97L4.58 13.62 11.943 24l7.37-10.38-7.372 4.35h.003zM12.056 0L4.69 12.223l7.365 4.354 7.365-4.35L12.056 0z"/></svg>
