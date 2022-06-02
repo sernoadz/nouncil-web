@@ -29,15 +29,15 @@ export default function Home() {
 
     <div className="border-noun-red border-t-[12px] bg-slate-200 text-slate-900">
 
-      <div className="flex flex-col items-center container mx-auto">
+      <div className="flex flex-col items-center container mx-auto px-8">
 
         <div className="w-32 my-8 md:my-10">
           <Image src="/nouncil-logo.png" alt="Nouncil" width={408} height={384} layout="responsive" />
         </div>
 
-        <a className="hover:bg-opacity-80 transition bg-noun-red text-white px-8 py-3 font-nouns text-xl rounded-xl mb-20" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1wGOWfLYYiYK9PrAyH4Q-uAWsiwals818XFocYXAh1pY/edit">Apply for Membership</a>
+        <a className="text-center w-full sm:w-auto hover:bg-opacity-80 transition bg-noun-red text-white px-8 py-3 font-nouns text-xl rounded-xl mb-8 sm:mb-20" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1wGOWfLYYiYK9PrAyH4Q-uAWsiwals818XFocYXAh1pY/edit">Apply for Membership</a>
 
-        <div className="grid lg:grid-cols-2 w-full gap-8 lg:gap-10 mb-20 px-8">
+        <div className="grid lg:grid-cols-2 w-full gap-8 lg:gap-10 mb-20">
           <Card title="Governance" image="/head-gavel.png">
             <ul className="text-lg text-slate-600 leading-relaxed divide-y border-b divide-slate-100 border-b-slate-100">
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1NZXpxwJcTfjuafqRaSfl8TMJ8uQR2tX_JFSn5WO5nzg/edit?usp=sharing">Governance Draft</a></li>
