@@ -15,7 +15,7 @@ export default function Home() {
       <meta property="og:site_name" content="Nouncil"/>
       <meta property="og:type" content="website"/>
       <meta property="og:description" content="A place for Nounish builders and project leaders to co-ordinate with Nouns DAO."/>
-      <meta property="og:image" content="/social.png"/>
+      <meta property="og:image" content="https://nouncil.netlify.app/social.png"/>
       <meta property="og:image:type" content="image/png"/>
       <meta property="og:image:width" content="1500"/>
       <meta property="og:image:height" content="750"/>
@@ -24,7 +24,7 @@ export default function Home() {
       <meta name="twitter:url" content="https://nouncil.wtf/"/>
       <meta name="twitter:title" content="Nouncil"/>
       <meta name="twitter:description" content="A place for Nounish builders and project leaders to co-ordinate with Nouns DAO."/>
-      <meta name="twitter:image" content="/social.png"/>
+      <meta name="twitter:image" content="https://nouncil.netlify.app/social.png"/>
     </Head>
 
     <div className="border-noun-red border-t-[12px] bg-slate-200 text-slate-900">
@@ -71,8 +71,8 @@ export default function Home() {
 
       </div>
 
-      <div className="w-full relative bg-white flex items-center flex-col justify-start leading-none">
-          <img className="scale-[300%] md:scale-150 lg:scale-100 z-0 rendering-pixelated object-fill w-full h-full" src="/footer.png" alt="Nouncillors" width="2192" height="208" />
+      <div className="w-full relative overflow-hidden bg-white flex items-center flex-col justify-start leading-none">
+          <div className="h-32"><img className=" scale-80 lg:scale-100 z-0 rendering-pixelated object-top object-none xl:object-contain w-full h-full" src="/footer.png" alt="Nouncillors" width="2192" height="208" /></div>
 
           <a target="_blank" rel="noreferrer" className="transition hover:bg-slate-200 text-lg flex items-center mt-12 bg-slate-100 border border-slate-200 rounded-xl px-5 py-3" href="https://etherscan.io/enslookup-search?search=nouncil.eth">
           <svg className="w-5 h-5 mr-1.5 fill-slate-600" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ethereum</title><path d="M11.944 17.97L4.58 13.62 11.943 24l7.37-10.38-7.372 4.35h.003zM12.056 0L4.69 12.223l7.365 4.354 7.365-4.35L12.056 0z"/></svg>
