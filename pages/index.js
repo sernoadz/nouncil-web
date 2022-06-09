@@ -45,6 +45,7 @@ export default function Home() {
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/spreadsheets/d/1Vj7yLxh7VK4TpfN8o8N7oeL-OJb6aYwkx5KegwDPEWg/edit?usp=sharing">Voting Record</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/spreadsheets/d/1nNkUrRFzAhrnnyoWkRvS64_D53eGp41f_eQtxFQys1E/edit?usp=sharing#">Nouncil Planning</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/spreadsheets/d/1gxXEoxUhHbcRZVSIB3mVbmRp3lfv-clnevIMuqiY2Jo/edit">Nouncil Membership</a></li>
+              <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1zEdaZL_oF9-bG7h2mimb8PB2DNMFVoVr24OFF5eoeE4/">Welcome to Nouncil</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://hackmd.io/tm6WjUwmT-6tFyiNtZ55jQ">Nouncil Proposal #1 - Final Draft</a></li>
             </ul>
           </Card>
@@ -57,6 +58,7 @@ export default function Home() {
           <Card title="Tools" image="/head-drill.png">
           <ul className="text-lg text-slate-600 leading-relaxed divide-y border-b divide-slate-100 border-b-slate-100">
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1bhQyEIi56qoyjM4m8nZRrmmm59HPz9mO3RjUOnredRM/edit?usp=sharing">Toga Template</a></li>
+              <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://togatime.cloudnouns.com/">Toga Time</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1tmvCRo4HSv4cGU1Z_Y9BOVOJlG0vrAa1BDDb3RGW4YM/edit?usp=sharing">Delegated Noun Tools</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1MDYV56Lmm_qd18O7hQLYD3gTZoISzm0ZpONGbK7Gp-Q/edit">How to Delegate to Nouncil</a></li>
             </ul>
