@@ -51,7 +51,7 @@ export default function Home({nouns}) {
       <div className="container flex flex-col items-center px-8 mx-auto">
 
         <div className="md:my-10 w-32 my-8">
-          <Image src="/nouncil-logo.png" alt="Nouncil" width={408} height={384} layout="responsive" />
+          <Image src="/nouncil-logo.png" alt="Nouncil" width={408} height={384} layout="responsive" priority />
         </div>
 
         <a className="sm:w-auto hover:bg-opacity-80 bg-noun-red font-nouns rounded-xl sm:mb-20 w-full px-8 py-3 mb-8 text-xl text-center text-white transition" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1wGOWfLYYiYK9PrAyH4Q-uAWsiwals818XFocYXAh1pY/edit">Apply for Membership</a>
