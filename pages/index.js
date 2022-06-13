@@ -2,7 +2,26 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Card from '../components/Card'
 
-export default function Home() {
+
+    export const getServerSideProps = async (context) => {
+
+      // Fetching de notre route
+      // API fetching
+      const res = await fetch('https://api.cloudnouns.com/v1/nouncil')
+
+      // Récupération des données de notre requête
+      // Cast value to json object
+      const nouns = await res.json()
+
+      return {
+          // Approvisionnement des props de notre page
+          // Sending articles to page
+          props: {nouns: nouns}
+      }
+  }
+
+
+export default function Home({nouns}) {
   return (
     <>
 
@@ -29,17 +48,31 @@ export default function Home() {
 
     <div className="border-noun-red border-t-[12px] bg-slate-200 text-slate-900">
 
-      <div className="flex flex-col items-center container mx-auto px-8">
+      <div className="container flex flex-col items-center px-8 mx-auto">
 
-        <div className="w-32 my-8 md:my-10">
+        <div className="md:my-10 w-32 my-8">
           <Image src="/nouncil-logo.png" alt="Nouncil" width={408} height={384} layout="responsive" />
         </div>
 
-        <a className="text-center w-full sm:w-auto hover:bg-opacity-80 transition bg-noun-red text-white px-8 py-3 font-nouns text-xl rounded-xl mb-8 sm:mb-20" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1wGOWfLYYiYK9PrAyH4Q-uAWsiwals818XFocYXAh1pY/edit">Apply for Membership</a>
+        <a className="sm:w-auto hover:bg-opacity-80 bg-noun-red font-nouns rounded-xl sm:mb-20 w-full px-8 py-3 mb-8 text-xl text-center text-white transition" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1wGOWfLYYiYK9PrAyH4Q-uAWsiwals818XFocYXAh1pY/edit">Apply for Membership</a>
 
-        <div className="grid lg:grid-cols-2 w-full gap-8 lg:gap-10 mb-20">
+        <div className="rounded-2xl lg:grid-cols-8 md:grid-cols-4 grid grid-cols-3 gap-5 px-10 pt-5 pb-10 mb-8 bg-white">
+          <h2 className="font-nouns md:text-4xl lg:col-span-8 md:col-span-4 col-span-3 mb-2 text-3xl">Delegated Nouns</h2>
+          {nouns.data.nouns.map((el, key) => (
+            <div key={key} className="group bg-noun-cool relative overflow-hidden rounded-md">
+              <div className="child group-hover:bg-opacity-40 group-hover:opacity-100 absolute z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-0 opacity-0">
+                <h3 className="font-nouns md:text-xl text-white">Noun {el.id}</h3>
+              </div>
+              <a href={`https://nouns.wtf/noun/${el.id}`} target="_blank" rel="noreferrer">
+                <img className="group-hover:blur-sm" src={`https://beta.noun-api.com/nounsdao/${el.id}`} alt={`Noun ${el.id}`}  />
+              </a>
+            </div>
+            ))}
+        </div>
+
+        <div className="lg:grid-cols-2 lg:gap-10 grid w-full gap-8 mb-20">
           <Card title="Governance" image="/head-gavel.png">
-            <ul className="text-lg text-slate-600 leading-relaxed divide-y border-b divide-slate-100 border-b-slate-100">
+            <ul className="text-slate-600 divide-slate-100 border-b-slate-100 text-lg leading-relaxed border-b divide-y">
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1NZXpxwJcTfjuafqRaSfl8TMJ8uQR2tX_JFSn5WO5nzg/edit?usp=sharing">Governance Draft</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://lizard-yarn-ffc.notion.site/d8a19bd7092048019e103ae20663fc5b?v=9e7534bd1fa646f3804fd4600dd2b6d3">Meetings</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/spreadsheets/d/1Vj7yLxh7VK4TpfN8o8N7oeL-OJb6aYwkx5KegwDPEWg/edit?usp=sharing">Voting Record</a></li>
@@ -50,13 +83,13 @@ export default function Home() {
             </ul>
           </Card>
           <Card title="Programs" image="/head-dictionary.png">
-          <ul className="text-lg text-slate-600 leading-relaxed divide-y border-b divide-slate-100 border-b-slate-100">
+          <ul className="text-slate-600 divide-slate-100 border-b-slate-100 text-lg leading-relaxed border-b divide-y">
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/spreadsheets/d/1LNVP0DBLPdoxgRy6Cb0egU7TSaljkheJ0idT_JP6koY/edit?usp=sharing">Retroactive Coordinape Rounds: Round 1 Result</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1-ILWgan1SweRZxRlT0xkQnebh7K5-z1cCn-50qk7KzY/edit?usp=sharing">Nouncillor Permissionless Grant Guidelines</a></li>
             </ul>
           </Card>
           <Card title="Tools" image="/head-drill.png">
-          <ul className="text-lg text-slate-600 leading-relaxed divide-y border-b divide-slate-100 border-b-slate-100">
+          <ul className="text-slate-600 divide-slate-100 border-b-slate-100 text-lg leading-relaxed border-b divide-y">
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1bhQyEIi56qoyjM4m8nZRrmmm59HPz9mO3RjUOnredRM/edit?usp=sharing">Toga Template</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://togatime.cloudnouns.com/">Toga Time</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1tmvCRo4HSv4cGU1Z_Y9BOVOJlG0vrAa1BDDb3RGW4YM/edit?usp=sharing">Delegated Noun Tools</a></li>
@@ -64,7 +97,7 @@ export default function Home() {
             </ul>
           </Card>
           <Card title="Miscellaneous" image="/head-abstract.png">
-          <ul className="text-lg text-slate-600 leading-relaxed divide-y border-b divide-slate-100 border-b-slate-100">
+          <ul className="text-slate-600 divide-slate-100 border-b-slate-100 text-lg leading-relaxed border-b divide-y">
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://app.poap.xyz/token/4714306">OG Nouncillor POAP</a></li>
               <li className="py-1"><a className="hover:text-noun-red block" target="_blank" rel="noreferrer" href="https://twitter.com/SuperTightWoody/status/1513986196409565185">Theme Song</a></li>
             </ul>
@@ -73,14 +106,14 @@ export default function Home() {
 
       </div>
 
-      <div className="w-full relative overflow-hidden bg-white flex items-center flex-col justify-start leading-none">
-          <div className="h-32"><img className="scale-110 lg:scale-100 z-0 rendering-pixelated object-top object-none xl:object-contain w-full h-full" src="/footer.png" alt="Nouncillors" width="2192" height="208" /></div>
+      <div className="relative flex flex-col items-center justify-start w-full overflow-hidden leading-none bg-white">
+          <div className="h-32"><img className="lg:scale-100 rendering-pixelated xl:object-contain z-0 object-none object-top w-full h-full scale-110" src="/footer.png" alt="Nouncillors" width="2192" height="208" /></div>
 
-          <a target="_blank" rel="noreferrer" className="transition hover:bg-slate-200 text-lg flex items-center mt-12 bg-slate-100 border border-slate-200 rounded-xl px-5 py-3" href="https://etherscan.io/enslookup-search?search=nouncil.eth">
+          <a target="_blank" rel="noreferrer" className="hover:bg-slate-200 bg-slate-100 border-slate-200 rounded-xl flex items-center px-5 py-3 mt-12 text-lg transition border" href="https://etherscan.io/enslookup-search?search=nouncil.eth">
           <svg className="w-5 h-5 mr-1.5 fill-slate-600" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ethereum</title><path d="M11.944 17.97L4.58 13.62 11.943 24l7.37-10.38-7.372 4.35h.003zM12.056 0L4.69 12.223l7.365 4.354 7.365-4.35L12.056 0z"/></svg>
             Nouncil.eth
             </a>
-          <div className="flex pt-8 pb-20 gap-8 items-center justify-center z-10 relative">
+          <div className="relative z-10 flex items-center justify-center gap-8 pt-8 pb-20">
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nouncil" className="fill-slate-800 hover:fill-cyan-500 transition">
               <svg className="w-10 h-auto" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
             </a>
