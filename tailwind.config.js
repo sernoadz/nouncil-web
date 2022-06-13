@@ -12,7 +12,7 @@ module.exports = {
         'noun-cool': '#D5D7E1',
       },
       fontFamily: {
-        'nouns': ['"Londrina Solid"', 'sans-serif'],
+        'nouns': ['Londrina Solid', 'sans-serif'],
       },
     },
   },
