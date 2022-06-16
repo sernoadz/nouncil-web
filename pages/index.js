@@ -59,14 +59,12 @@ export default function Home({nouns}) {
         <div className="rounded-2xl lg:grid-cols-8 md:grid-cols-4 grid grid-cols-3 gap-5 px-10 pt-5 pb-10 mb-8 bg-white">
           <h2 className="font-nouns md:text-4xl lg:col-span-8 md:col-span-4 col-span-3 mb-2 text-3xl">Delegated Nouns ({nouns.data.nouns.length})</h2>
           {nouns.data.nouns.map((el, key) => (
-            <div key={key} className="group bg-noun-cool relative overflow-hidden rounded-md">
+            <a key={key} className="group bg-noun-cool relative overflow-hidden rounded-md" href={`https://nouns.wtf/noun/${el.id}`} target="_blank" rel="noreferrer">
               <div className="child group-hover:bg-opacity-40 group-hover:opacity-100 absolute z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-0 opacity-0">
                 <h3 className="font-nouns md:text-xl text-white">Noun {el.id}</h3>
               </div>
-              <a href={`https://nouns.wtf/noun/${el.id}`} target="_blank" rel="noreferrer">
                 <img className="group-hover:blur-sm" src={`https://beta.noun-api.com/nounsdao/${el.id}`} alt={`Noun ${el.id}`}  />
-              </a>
-            </div>
+            </a>
             ))}
         </div>
 
