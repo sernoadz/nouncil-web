@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: false,
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
+    return config;
+  },
   async redirects() {
     return [
       {

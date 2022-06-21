@@ -5,3 +5,13 @@
 .rendering-auto { image-rendering: auto; }
 .rendering-crisp-edges { image-rendering: crisp-edges; }
 .rendering-pixelated { image-rendering: pixelated; }
+
+#special_button:hover {
+    -webkit-transform: scale(1.075);
+    transform: scale(1.075);
+}
+
+#special_button:active {
+    -webkit-transform: scale(.92);
+    transform: scale(.92);
+}
