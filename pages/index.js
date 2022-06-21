@@ -196,7 +196,7 @@ export default function Home({ nouns }) {
   return (
     <>
       <Head>
-        <title>Nouncila</title>
+        <title>Nouncil</title>
         <link rel="icon" href="/favicon.svg" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="Nouncil" />
