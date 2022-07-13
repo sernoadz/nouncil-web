@@ -1,3 +1,11 @@
+/**
+ * Page to display current set of applicants for the Nouncil.
+ *
+ * This page takes data from the AddressForm linked on the home page (at the apply button)
+ * and pipes it through the AddressForm API to this page.
+ *
+ * We filter to applications from the last 30 days becasuse the Nouncil does monthly application cycles.
+ */
 import Head from "next/head";
 import Image from "next/image";
 import { ExternalLinkIcon } from "@heroicons/react/solid";
@@ -11,7 +19,7 @@ import {
 } from "../utils/presentation-utils";
 
 export const getServerSideProps = async (context) => {
-  // API fetching
+  // Fetch applicants from API
   const formData = await fetchApplicationFormData();
   return {
     props: { formData },
@@ -25,7 +33,10 @@ export default function Applications({ formData }) {
         <title>Nouncil Applications</title>
         <link rel="icon" href="/favicon.svg" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="June 2022 Nouncil Applicants" />
+        <meta
+          property="og:title"
+          content={`Nouncil Applicants - ${getCurrentMonthString()} ${new Date().getFullYear()}`}
+        />
         <meta property="og:url" content="https://nouncil.wtf/" />
         <meta property="og:site_name" content="Nouncil" />
         <meta property="og:type" content="website" />
@@ -70,7 +81,7 @@ export default function Applications({ formData }) {
           <div className="w-full mb-20">
             <div className="rounded-2xl px-10 pt-5 pb-10 mb-8 bg-white">
               <h2 className="font-nouns md:text-4xl mb-2 text-3xl mb-5">
-                Applicants - {getCurrentMonthString()}{" "}
+                Nouncil Applicants - {getCurrentMonthString()}{" "}
                 {new Date().getFullYear()}
               </h2>
               <ul className="text-slate-600 text-lg leading-relaxed">
