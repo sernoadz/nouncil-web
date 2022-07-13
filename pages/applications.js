@@ -75,14 +75,16 @@ export default function Applications({ formData }) {
       <div className="border-noun-red border-t-[12px] bg-slate-200 text-slate-900">
         <div className="container flex flex-col items-center px-8 mx-auto">
           <div className="md:my-10 w-32 my-8">
-            <Image
-              src="/nouncil-logo.png"
-              alt="Nouncil"
-              width={408}
-              height={384}
-              layout="responsive"
-              priority
-            />
+            <a href="/">
+              <Image
+                src="/nouncil-logo.png"
+                alt="Nouncil"
+                width={408}
+                height={384}
+                layout="responsive"
+                priority
+              />
+            </a>
           </div>
 
           <div className="w-full mb-20">
