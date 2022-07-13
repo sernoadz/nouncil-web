@@ -71,7 +71,7 @@ export default function Home({ nouns }) {
             className="sm:w-auto hover:bg-opacity-80 bg-noun-red font-nouns rounded-xl sm:mb-20 w-full px-8 py-3 mb-8 text-xl text-center text-white transition"
             target="_blank"
             rel="noreferrer"
-            href="https://www.addressform.io/form/25e8e038-3208-4c65-b200-7dea6a550d9a"
+            href="https://www.addressform.io/f/nouncil-apply-for-membership"
           >
             Apply for Membership
           </a>
