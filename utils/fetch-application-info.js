@@ -22,7 +22,7 @@ export const fetchApplicationFormData = async () => {
 
 /**
  * Process API response into data to be displayed on the page
- * @param {*} apiResponse  AddressForm API response
+ * @param apiResponse  AddressForm API response
  * @returns Data for display on the page
  */
 const postProcessAPIResponse = async (apiResponse) => {
@@ -57,10 +57,10 @@ const postProcessAPIResponse = async (apiResponse) => {
 /**
  * Get difference in days between two unix timestamps
  *
- * Note: unixtimestamps means they are 1000x javascript default timestamps
+ * Note: unix timestamps means they are 1000x javascript default timestamps
  *
- * @param {*} timestamp1 unix timestamp
- * @param {*} timestamp2  unix timestamp
+ * @param timestamp1 unix timestamp
+ * @param timestamp2  unix timestamp
  * @returns Difference between timestamp1 and timestamp2 in days
  */
 const daysDifferenceTimestamps = (timestamp1, timestamp2) => {
