@@ -1,10 +1,7 @@
-import { getENS, urlify } from "./presentation-utils";
+import { getENS } from "./presentation-utils";
 
-// const ADDRESS_FORM_API_KEY="";
-// const APPLICATION_FORM_ID="";
-
-const ADDRESS_FORM_API_KEY = "9f8597ed-74ea-4fbf-8f4d-f814214f874d";
-const APPLICATION_FORM_ID = "67e9e97f-e0c8-484b-9e3b-d802de28190d";
+const ADDRESS_FORM_API_KEY = "e8d143d0-c540-474e-a064-2f1dbe485c18";
+const APPLICATION_FORM_ID = "25e8e038-3208-4c65-b200-7dea6a550d9a";
 
 const ADDRESS_FORM_API_BASE_URL =
   "https://api.addressform.io/ext-api/v1/form-responses?";
@@ -24,7 +21,9 @@ export const fetchApplicationFormData = async () => {
 };
 
 /**
- *
+ * Process API response into data to be displayed on the page
+ * @param {*} apiResponse  AddressForm API response
+ * @returns Data for display on the page
  */
 const postProcessAPIResponse = async (apiResponse) => {
   const result = apiResponse.responses
@@ -34,7 +33,7 @@ const postProcessAPIResponse = async (apiResponse) => {
         MAX_AGE_DAYS
     )
     .sort(
-      // Sort in reverse chorno order
+      // Sort in reverse chrono order
       (response1, response2) => response2.timestamp - response1.timestamp
     )
     .map(async (response) => {

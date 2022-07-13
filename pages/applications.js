@@ -19,8 +19,15 @@ import {
 } from "../utils/presentation-utils";
 
 export const getServerSideProps = async (context) => {
-  // Fetch applicants from API
-  const formData = await fetchApplicationFormData();
+  let formData = [];
+  // Wrap API call in try-catch so that in the unlikely event
+  // of an API error we don't crash the page (we will just show no results)
+  try {
+    // Fetch applicants from API
+    formData = await fetchApplicationFormData();
+  } catch (e) {
+    console.log(e);
+  }
   return {
     props: { formData },
   };
