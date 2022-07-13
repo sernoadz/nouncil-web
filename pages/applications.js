@@ -8,6 +8,7 @@
  */
 import Head from "next/head";
 import Image from "next/image";
+import Link from 'next/link'
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import { fetchApplicationFormData } from "../utils/fetch-application-info";
 import {
@@ -75,21 +76,23 @@ export default function Applications({ formData }) {
       <div className="border-noun-red border-t-[12px] bg-slate-200 text-slate-900">
         <div className="container flex flex-col items-center px-8 mx-auto">
           <div className="md:my-10 w-32 my-8">
-            <a href="/">
-              <Image
-                src="/nouncil-logo.png"
-                alt="Nouncil"
-                width={408}
-                height={384}
-                layout="responsive"
-                priority
-              />
-            </a>
+            <Link href="/">
+              <a>
+                <Image
+                  src="/nouncil-logo.png"
+                  alt="Nouncil"
+                  width={408}
+                  height={384}
+                  layout="responsive"
+                  priority
+                />
+              </a>
+            </Link>
           </div>
 
           <div className="w-full mb-20">
             <div className="rounded-2xl px-10 pt-5 pb-10 mb-8 bg-white">
-              <h2 className="font-nouns md:text-4xl mb-2 text-3xl mb-5">
+              <h2 className="font-nouns md:text-4xl mb-2 mb-5 text-3xl">
                 Nouncil Applicants - {getCurrentMonthString()}{" "}
                 {new Date().getFullYear()}
               </h2>
@@ -97,16 +100,16 @@ export default function Applications({ formData }) {
                 {formData.map((response) => {
                   return (
                     <li
-                      className="py-1 mb-3 border-b-2 border-slate-100"
+                      className="border-slate-100 py-1 mb-3 border-b-2"
                       key={response.id}
                     >
                       <span className="mb-1">
-                        <h1 className="font-nouns text-2xl text-slate-900">
+                        <h1 className="font-nouns text-slate-900 text-2xl">
                           {response.discord}
                         </h1>
                       </span>
-                      <div className="text-sm text-slate-600 flex">
-                        <div className="hover:underline hover:text-slate-900 cursor-pointer transition ease-in-out 125">
+                      <div className="text-slate-600 flex text-sm">
+                        <div className="hover:underline hover:text-slate-900 125 transition ease-in-out cursor-pointer">
                           <a
                             className="flex"
                             target="_blank"
@@ -117,7 +120,7 @@ export default function Applications({ formData }) {
                               ? response.ens
                               : shortenAddress(response.address)}{" "}
                             <ExternalLinkIcon
-                              className="h-5 w-5 ml-1 mr-1 opacity-60"
+                              className="opacity-60 w-5 h-5 ml-1 mr-1"
                               style={{
                                 marginTop: "-0.05rem",
                               }}
@@ -125,14 +128,14 @@ export default function Applications({ formData }) {
                           </a>
                         </div>
                         {response.twitter && (
-                          <div className="border-l-2 pl-2 mr-2">
+                          <div className="pl-2 mr-2 border-l-2">
                             <a
                               href={buildTwitterLink(response.twitter)}
                               target="_blank"
                               rel="noreferrer"
                             >
                               <svg
-                                className="w-5 h-5 opacity-60 cursor-pointer transition ease-in-out 125 hover:opacity-100"
+                                className="opacity-60 125 hover:opacity-100 w-5 h-5 transition ease-in-out cursor-pointer"
                                 role="img"
                                 viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -146,9 +149,9 @@ export default function Applications({ formData }) {
                             </a>
                           </div>
                         )}
-                        <div className="border-l-2 pl-2 hidden lg:flex">
+                        <div className="lg:flex hidden pl-2 border-l-2">
                           <svg
-                            className="h-5 w-5 opacity-60 mr-2"
+                            className="opacity-60 w-5 h-5 mr-2"
                             viewBox="0 0 71 55"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -169,13 +172,13 @@ export default function Applications({ formData }) {
                         </div>
                       </div>
 
-                      <div className="mt-3 text-slate-900 text-lg w-full">
+                      <div className="text-slate-900 w-full mt-3 text-lg">
                         {urlify(response.personal_statement)}
                       </div>
 
-                      <div className="flex lg:hidden text-sm text-slate-600 mt-3">
+                      <div className="lg:hidden text-slate-600 flex mt-3 text-sm">
                         <svg
-                          className="h-5 w-5 opacity-60 mr-2"
+                          className="opacity-60 w-5 h-5 mr-2"
                           viewBox="0 0 71 55"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
