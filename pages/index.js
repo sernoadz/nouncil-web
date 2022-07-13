@@ -54,7 +54,7 @@ export default function Home({nouns}) {
           <Image src="/nouncil-logo.png" alt="Nouncil" width={408} height={384} layout="responsive" priority />
         </div>
 
-        <a className="sm:w-auto hover:bg-opacity-80 bg-noun-red font-nouns rounded-xl sm:mb-20 w-full px-8 py-3 mb-8 text-xl text-center text-white transition" target="_blank" rel="noreferrer" href="https://docs.google.com/document/d/1wGOWfLYYiYK9PrAyH4Q-uAWsiwals818XFocYXAh1pY/edit">Apply for Membership</a>
+        <a className="sm:w-auto hover:bg-opacity-80 bg-noun-red font-nouns rounded-xl sm:mb-20 w-full px-8 py-3 mb-8 text-xl text-center text-white transition" target="_blank" rel="noreferrer" href="https://www.addressform.io/form/25e8e038-3208-4c65-b200-7dea6a550d9a">Apply for Membership</a>
 
         <div className="rounded-2xl lg:grid-cols-8 md:grid-cols-4 grid grid-cols-3 gap-5 px-10 pt-5 pb-10 mb-8 bg-white">
           <h2 className="font-nouns md:text-4xl lg:col-span-8 md:col-span-4 col-span-3 mb-2 text-3xl">Delegated Nouns ({nouns.data.nouns.length})</h2>
