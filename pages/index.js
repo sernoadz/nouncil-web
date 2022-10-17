@@ -54,7 +54,10 @@ export default function Home({nouns}) {
           <Image src="/nouncil-logo.png" alt="Nouncil" width={408} height={384} layout="responsive" priority />
         </div>
 
-        <a className="w-full px-8 py-3 mb-8 text-xl text-center text-white transition sm:w-auto hover:bg-opacity-80 bg-noun-red font-nouns rounded-xl sm:mb-20" target="_blank" rel="noreferrer" href="https://form.addressform.io/f/nouncil-apply-for-membership">Apply for Membership</a>
+        <div className="flex flex-col sm:mb-20">
+            <a className="sm:w-auto bg-noun-red font-nouns rounded-xl w-full px-8 py-3 mb-8 text-xl text-center text-white transition" target="_blank" rel="noreferrer" href="https://form.addressform.io/f/nouncil-apply-for-membership" id={"link_button"}> Apply for Membership</a>
+            <a className="sm:w-auto bg-noun-red font-nouns rounded-xl w-full px-8 py-3 mb-8 text-xl text-center text-white transition" target="_blank" rel="noreferrer" href="https://nouns.wtf/delegate?to=0xcC2688350d29623E2A0844Cc8885F9050F0f6Ed5" id={"link_button"}> Delegate to Nouncil</a>
+        </div>
 
         <div className="grid grid-cols-3 gap-5 px-10 pt-5 pb-10 mb-8 bg-white rounded-2xl lg:grid-cols-8 md:grid-cols-4">
           <h2 className="col-span-3 mb-2 text-3xl font-nouns md:text-4xl lg:col-span-8 md:col-span-4">Delegated Nouns ({nouns.data.nouns.length})</h2>
